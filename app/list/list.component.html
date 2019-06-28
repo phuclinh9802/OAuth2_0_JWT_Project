@@ -1,0 +1,86 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Phillip's Website</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <h2 style="color:white;text-align: center; font-family: sans-serif;">List of Users</h2>
+  <br>
+  <br>
+<div class="user">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+              <th></th>
+              <th scope="col"><strong>Username</strong></th>
+              <th scope="col"><strong>Full Name</strong></th>
+              <th scope="col"><strong>Email</strong></th>
+              <th scope="col"><strong>Role</strong></th>
+            </tr>
+          </thead>
+          <!-- <ng-container *ngIf = "userDetails"> -->
+          <ng-container *ngFor="let userDetail of userDetails">
+              <tbody> 
+                  <tr>
+                      <td></td>
+                      <td>{{userDetail.userName}}</td>
+                      <td>{{userDetail.fullName}}</td>
+                      <td>{{userDetail.email}}</td>
+                      <td>{{userDetail.role}}</td>
+                    </tr>
+              </tbody>
+          </ng-container>
+        </table>
+      </div>
+<!-- <div class="user" *ngFor="userDetail in userDetails">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+              <th></th>
+              <th scope="col"><strong>Username</strong></th>
+              <th scope="col"><strong>Full Name</strong></th>
+              <th scope="col"><strong>Email</strong></th>
+              <th scope="col"><strong>Role</strong></th>
+            </tr>
+          </thead>
+          <ng-container>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>{{userDetail.userName}}</td>
+                  <td>{{userDetail.fullName}}</td>
+                  <td>{{userDetail.email}}</td>
+                  <td>{{userDetail.role}}</td>
+                </tr>
+              </tbody>
+          </ng-container>
+        </table>
+      </div> -->
+      
+            <!-- <ng-container #elseBlock *ngFor="let userDetail of userDetails">
+            <tbody> 
+                <tr>
+                    <td></td>
+                    <td>{{userDetail.userName}}</td>
+                    <td>{{userDetail.fullName}}</td>
+                    <td>{{userDetail.email}}</td>
+                    <td>{{userDetail.role}}</td>
+                  </tr>
+            </tbody>
+            </ng-container> -->
+            
+      <!-- </ng-container> -->
+
+      <!-- <ng-container *ngIf = "userDetails?.length == 1">
+
+      </ng-container> -->
+   

@@ -1,0 +1,73 @@
+<br>
+<div class="row">
+    <div class="col-4">
+            <img src = "/assets/img/register.png" width="130" height="100" class="mx-auto d-block">
+    </div>
+    <div class="col-4">
+       <!-- <div class="row" style="height:450px"> -->
+        <!-- <div class="col-md-12 my-auto side-header"> --> 
+            
+        <!-- </div> -->
+        <!-- </div>  -->
+    </div>
+</div>
+<br>
+<div class="row">
+        <div class="col-4" style="text-align:center;">
+            <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+                <div class="form-group required">
+                    <label class="label" style="margin-left:-145%;">Username</label>
+                    <input class="form-control" formControlName="UserName" style="width:200%;margin-left:-50%;"placeholder="Enter your username...">
+                    <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">This field is mandatory</label>
+                </div>
+                <div class="form-group">
+                        <label class="label" style="margin-left:-153%;">Full Name</label>
+                        <input class="form-control" formControlName="FullName" style="width:200%;margin-left:-50%;" placeholder="John Smith">
+                </div>
+                <div class="form-group">
+                        <label class="label" style="margin-left:-172%">Email</label>
+                        <input class="form-control" formControlName="Email" style="width:200%;margin-left:-50%;" placeholder="example@gmail.com">
+                        <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Invalid Email Address</label>
+                </div>
+                <div formGroupName="Passwords">
+                    <div class="form-group required">
+                            <label class="label" style="margin-left:-148%;">Password</label>
+                            <input type ="password" class="form-control" formControlName="Password" style="width:200%;margin-left:-50%;" placeholder="Password">
+                            <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">This field is mandatory</label>
+                            <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Minimum 4 characters required</label>
+                    </div>
+                    <div class="form-group required">
+                            <label class="label" style="margin-left:-112%;">Confirm Password</label>
+                            <input type ="password" class="form-control" formControlName="ConfirmPassword" style="width:200%;margin-left:-50%;" placeholder="Confirm Password">
+                            <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">This field is mandatory</label>
+                            <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.minlength">Minimum 4 characters required</label>
+                            <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm Password does not match, please try again.</label>
+                    </div>
+                </div>
+                <div class="form-group required">
+                        <label class="label" style="margin-left:-170%;">Role</label>
+                        <input class="form-control" formControlName="Role" style="width:200%;margin-left:-50%;"placeholder="Admin/User">
+                        <label class="text-danger" *ngIf="service.formModel.get('Role').touched && service.formModel.get('Role').errors?.required">This field is mandatory</label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8 offset-md-2">
+                        <button type ="submit" class="btn btn-lg btn-block" style ="width:120%; margin-left:-10%;" [disabled] = "!this.service.formModel.valid">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+        </div>
+              <div class="login">
+                
+                        <h3 style="color:white;">Or go to login <strong>--></strong></h3>
+                    <br>
+            
+            <!-- <form action="/user/login"> -->
+                <!-- <button onclick="location.href='user/login'"type="button" class="btn btn-lg btn-block">Sign In!</button> -->
+                        <a href="user/login" class="sign-in">Sign In!</a>
+            <!-- </form> -->
+                    
+        </div>
+        
+    </div>
